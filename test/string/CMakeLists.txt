@@ -1,0 +1,22 @@
+project(string_test)
+
+set(SOURCES
+	StringTokenizerTest.cpp
+	StringTokenizerTest.h
+	string_test_driver.cpp
+)
+
+include_directories(
+	${CMAKE_SOURCE_DIR}/src/string
+	${CMAKE_SOURCE_DIR}/test
+)
+
+add_executable(string_test ${SOURCES})
+add_test(string_test string_test)
+
+target_link_libraries(string_test
+	string
+	cppunit
+)
+
+
