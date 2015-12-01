@@ -1,13 +1,13 @@
 language: cpp
 
 compiler:
-	- clang
-	- gcc
+  - clang
+  - gcc
 
 install:
-	- sudo apt-get install libcppunit-dev
+  - sudo apt-get install libcppunit-dev
 
 script:
-	- cmake .
-	- make
-	- make test
+  - cmake .
+  - make
+  - make test
