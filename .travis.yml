@@ -10,6 +10,7 @@ compiler:
 
 install:
   - ./prereqs.sh
+sudo: required
 
 script:
   - cmake .
