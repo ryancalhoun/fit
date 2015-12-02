@@ -9,7 +9,7 @@ compiler:
   - gcc
 
 install:
-  - sudo apt-get install libcppunit-dev
+  - [ $TRAVIS_OS_NAME = linux ] && sudo apt-get install libcppunit-dev || brew install cppunit
 
 script:
   - cmake .
