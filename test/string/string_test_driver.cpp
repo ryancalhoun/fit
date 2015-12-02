@@ -1,13 +1,14 @@
-#include <cppunit/extensions/TestFactoryRegistry.h>
-#include <cppunit/ui/text/TestRunner.h>
-
+#include "cppunit/ui/text/TestRunner.h"
+#include "cppunit/TestResultCollector.h"
 #include "StringTokenizerTest.h"
 
 int main(int argc, const char* argv[])
 {
-    CppUnit::TextUi::TestRunner runner;
-    CppUnit::TestFactoryRegistry &registry = CppUnit::TestFactoryRegistry::getRegistry();
-    runner.addTest( registry.makeTest() );
-    bool wasSuccessful = runner.run();
-    return !wasSuccessful;
+	CppUnit::TextUi::TestRunner runner;
+
+	runner.addTest(StringTokenizerTest::suite());
+
+	runner.run();
+
+	return runner.result().testFailures();
 }

@@ -15,4 +15,4 @@ sudo: required
 script:
   - cmake .
   - make
-  - make test
+  - ctest --verbose

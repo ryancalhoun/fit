@@ -1,6 +1,5 @@
 #pragma once
 
-#include "cppunit/extensions/HelperMacros.h"
 #include "cppunit/TestCaller.h"
 #include "cppunit/TestFixture.h"
 #include "cppunit/TestSuite.h"
@@ -15,24 +14,19 @@ public:
 
 	void testSplit();
 
-//	static CppUnit::Test* suite();
-
-	CPPUNIT_TEST_SUITE(StringTokenizerTest);
-	CPPUNIT_TEST(testSplit);
-	CPPUNIT_TEST_SUITE_END();
-
+	static CppUnit::Test* suite();
 
 protected:
 
 };
-/*
+
 inline CppUnit::Test* StringTokenizerTest::suite()
 {
 	CppUnit::TestSuite* suite = new CppUnit::TestSuite("class StringTokenizerTest");
 
-	suite->addTest(new CppUnit::TestCaller<StringTokenizerTest>("testSplit", testSplit));
+	suite->addTest(new CppUnit::TestCaller<StringTokenizerTest>("testSplit", &StringTokenizerTest::testSplit));
 
 	return suite;
 }
-*/
+
 
