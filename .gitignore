@@ -4,5 +4,7 @@ CTestTestfile.cmake
 Makefile
 Testing
 build/
+dist/
 cmake_install.cmake
+install_manifest.txt
 
