@@ -38,10 +38,11 @@ namespace CppUnit
 #define DEFINE_SUITE(var, name) DefineSuite<name> var(STR(name));
 #define ADD_TEST(var, test) \
 	do { \
-		typedef typeof(var) test_class; \
+		typedef __typeof__(var) test_class; \
 		var.addTest(STR(test), &test_class::type::test); \
 	} while(0)
 
 #define assert_true(cond) CPPUNIT_ASSERT(cond)
 #define assert_false(cond) CPPUNIT_ASSERT(! cond)
 #define assert_equal(expected, actual) CPPUNIT_ASSERT_EQUAL(expected, actual)
+
