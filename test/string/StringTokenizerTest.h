@@ -1,8 +1,6 @@
 #pragma once
 
-#include "cppunit/TestCaller.h"
-#include "cppunit/TestFixture.h"
-#include "cppunit/TestSuite.h"
+#include "CppUnit.h"
 
 class StringTokenizerTest : public CppUnit::TestFixture
 {
@@ -22,9 +20,8 @@ protected:
 
 inline CppUnit::Test* StringTokenizerTest::suite()
 {
-	CppUnit::TestSuite* suite = new CppUnit::TestSuite("class StringTokenizerTest");
-
-	suite->addTest(new CppUnit::TestCaller<StringTokenizerTest>("testSplit", &StringTokenizerTest::testSplit));
+	DEFINE_SUITE(suite, StringTokenizerTest);
+	ADD_TEST(suite, testSplit);
 
 	return suite;
 }
