@@ -32,6 +32,30 @@ namespace CppUnit
 	{
 		CppUnit::assertEquals<std::string>(expected, actual, sourceLine, message);
 	}
+	inline void assertEquals(int expected, int actual, SourceLine sourceLine, const std::string& message)
+	{
+		CppUnit::assertEquals<int>(expected, actual, sourceLine, message);
+	}
+	inline void assertEquals(int expected, long long actual, SourceLine sourceLine, const std::string& message)
+	{
+		CppUnit::assertEquals<long long>(expected, actual, sourceLine, message);
+	}
+	inline void assertEquals(int expected, size_t actual, SourceLine sourceLine, const std::string& message)
+	{
+		CppUnit::assertEquals<size_t>(expected, actual, sourceLine, message);
+	}
+	inline void assertEquals(size_t expected, size_t actual, SourceLine sourceLine, const std::string& message)
+	{
+		CppUnit::assertEquals<size_t>(expected, actual, sourceLine, message);
+	}
+	inline void assertEquals(long long expected, long long actual, SourceLine sourceLine, const std::string& message)
+	{
+		CppUnit::assertEquals<long long>(expected, actual, sourceLine, message);
+	}
+	inline void assertEquals(unsigned long long expected, unsigned long long actual, SourceLine sourceLine, const std::string& message)
+	{
+		CppUnit::assertEquals<unsigned long long>(expected, actual, sourceLine, message);
+	}
 }
 
 #define STR(name) #name
