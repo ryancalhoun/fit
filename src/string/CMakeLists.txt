@@ -1,8 +1,10 @@
 set(HEADERS
+	StringList.h
 	StringTokenizer.h
 )
 
 set(SOURCES
+	StringList.cpp
 	StringTokenizer.cpp
 )
 

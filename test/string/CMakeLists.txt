@@ -1,6 +1,8 @@
 project(string_test)
 
 set(SOURCES
+	StringListTest.cpp
+	StringListTest.h
 	StringTokenizerTest.cpp
 	StringTokenizerTest.h
 	string_test_driver.cpp
