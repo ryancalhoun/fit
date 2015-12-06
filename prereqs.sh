@@ -6,3 +6,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	brew install cppunit
 fi
+
+echo System Info
+ruby --version || true
+gem --version || true
+gem list || true
