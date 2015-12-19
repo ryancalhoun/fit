@@ -1,19 +1,15 @@
 os:
   - linux
   - osx
-
 language: cpp
-
 compiler:
   - clang
   - gcc
 
 before_install:
   - bundle install
-
 install:
-  - ./prereqs.sh
-sudo: required
+  - rake cppunit
 
 before_script:
 - rake cmake
@@ -24,6 +20,7 @@ after_success:
 
 before_deploy:
 - rake package
+
 deploy:
   provider: releases
   api-key:

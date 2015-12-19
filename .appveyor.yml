@@ -1,0 +1,30 @@
+platform:
+  - x64
+configuration:
+  - RelWithDebInfo
+  - Debug
+
+install:
+  - bundle install
+  - rake cppunit
+
+before_build:
+  - rake cmake
+build_script:
+  - rake build
+test_script:
+  - rake test
+after_test:
+  - rake package
+
+artifacts:
+  - path: 'dist\fit*zip'
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: QsR9jNzYFT5kWsoiDfG+aON57mym2XlmSNaoFu8CnzPzU6l7ReBbLy6htNY640CK
+  draft: false
+  prerelease: false
+  on:
+    branch: master
+    appveyor_repo_tag: true

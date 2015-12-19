@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CppUnit.h"
+#include "cppunit/CppUnit.h"
 
 class StringListTest : public CppUnit::TestFixture
 {
@@ -20,13 +20,13 @@ public:
 
 inline CppUnit::Test* StringListTest::suite()
 {
-	DEFINE_SUITE(suite, StringListTest);
+	CPPUNIT_DEFINE_SUITE(suite, StringListTest);
 
-	ADD_TEST(suite, testAppend);
-	ADD_TEST(suite, testContainerConstructor);
-	ADD_TEST(suite, testContainerConcat);
-	ADD_TEST(suite, testIteratorConstructor);
-	ADD_TEST(suite, testIteratorConcat);
+	CPPUNIT_ADD_TEST(suite, testAppend);
+	CPPUNIT_ADD_TEST(suite, testContainerConstructor);
+	CPPUNIT_ADD_TEST(suite, testContainerConcat);
+	CPPUNIT_ADD_TEST(suite, testIteratorConstructor);
+	CPPUNIT_ADD_TEST(suite, testIteratorConcat);
 
 	return suite;
 }

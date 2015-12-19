@@ -5,7 +5,11 @@ project(fit)
 enable_testing()
 
 include_directories(
-	${corelib_SOURCE_DIR}/src
+	${CMAKE_SOURCE_DIR}/src
+	${CMAKE_SOURCE_DIR}/vendor/cppunit/include
+)
+link_directories(
+	${CMAKE_SOURCE_DIR}/vendor/cppunit/lib
 )
 
 add_subdirectory(src/string)

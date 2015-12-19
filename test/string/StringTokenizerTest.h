@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CppUnit.h"
+#include "cppunit/CppUnit.h"
 
 class StringTokenizerTest : public CppUnit::TestFixture
 {
@@ -29,18 +29,18 @@ protected:
 
 inline CppUnit::Test* StringTokenizerTest::suite()
 {
-	DEFINE_SUITE(suite, StringTokenizerTest);
+	CPPUNIT_DEFINE_SUITE(suite, StringTokenizerTest);
 
-	ADD_TEST(suite, testSplit);
-	ADD_TEST(suite, testSplitMinLength);
-	ADD_TEST(suite, testSplitChar);
-	ADD_TEST(suite, testSplitSubstr);
-	ADD_TEST(suite, testSplitCharset);
-	ADD_TEST(suite, testSplitCharsetEmpty);
+	CPPUNIT_ADD_TEST(suite, testSplit);
+	CPPUNIT_ADD_TEST(suite, testSplitMinLength);
+	CPPUNIT_ADD_TEST(suite, testSplitChar);
+	CPPUNIT_ADD_TEST(suite, testSplitSubstr);
+	CPPUNIT_ADD_TEST(suite, testSplitCharset);
+	CPPUNIT_ADD_TEST(suite, testSplitCharsetEmpty);
 
-	ADD_TEST(suite, testSplitEmptyParts);
-	ADD_TEST(suite, testSplitEmpty);
-	ADD_TEST(suite, testSplitNoDelimiters);
+	CPPUNIT_ADD_TEST(suite, testSplitEmptyParts);
+	CPPUNIT_ADD_TEST(suite, testSplitEmpty);
+	CPPUNIT_ADD_TEST(suite, testSplitNoDelimiters);
 
 	return suite;
 }
