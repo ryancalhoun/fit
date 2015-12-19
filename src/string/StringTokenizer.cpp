@@ -1,6 +1,7 @@
 #include "StringTokenizer.h"
 
 #include <cstring>
+#include <algorithm>
 
 StringTokenizer::StringTokenizer(const std::string& source, char delimiter)
 	: _source(source)
