@@ -17,7 +17,6 @@ public:
 	static CppUnit::Test* suite();
 };
 
-
 inline CppUnit::Test* StringListTest::suite()
 {
 	CPPUNIT_DEFINE_SUITE(suite, StringListTest);
