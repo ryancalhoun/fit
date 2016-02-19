@@ -12,15 +12,15 @@ link_directories(
 	${CMAKE_SOURCE_DIR}/vendor/cppunit/lib
 )
 
-file(GLOB source_projects src/lib/*/CMakeLists.txt)
+file(GLOB_RECURSE source_projects src/*/CMakeLists.txt)
 foreach(project_file ${source_projects})
-	get_filename_component(project_dir ${project_file} DIRECTORY)
+	get_filename_component(project_dir ${project_file} PATH)
 	add_subdirectory(${project_dir})
 endforeach()
 
-file(GLOB test_projects test/lib/*/CMakeLists.txt)
+file(GLOB_RECURSE test_projects test/*/CMakeLists.txt)
 foreach(project_file ${test_projects})
-	get_filename_component(project_dir ${project_file} DIRECTORY)
+	get_filename_component(project_dir ${project_file} PATH)
 	add_subdirectory(${project_dir})
 endforeach()
 
