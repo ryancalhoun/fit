@@ -9,7 +9,7 @@ set(SOURCES
 )
 
 include_directories(
-	${CMAKE_SOURCE_DIR}/src/string
+	${CMAKE_SOURCE_DIR}/src/lib/string
 )
 
 add_executable(string_test ${SOURCES})
