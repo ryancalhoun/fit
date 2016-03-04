@@ -11,7 +11,7 @@ int main(int argc, const char* argv[])
 	runner.addTest(StringListTest::suite());
 	runner.addTest(StringTokenizerTest::suite());
 
-	runner.run();
+	runner.run(argc, argv);
 
 	return runner.result().testFailures();
 }

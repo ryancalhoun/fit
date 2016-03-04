@@ -9,7 +9,7 @@ int main(int argc, const char* argv[])
 
 	runner.addTest(PathTest::suite());
 
-	runner.run();
+	runner.run(argc, argv);
 
 	return runner.result().testFailures();
 }
