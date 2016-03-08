@@ -10,6 +10,8 @@ public:
 
 	void testBasename();
 	void testDirname();
+	void testAppend();
+	void testNormalize();
 
 	static CppUnit::Test* suite();
 };
@@ -20,6 +22,8 @@ inline CppUnit::Test* PathTest::suite()
 
 	CPPUNIT_ADD_TEST(suite, testBasename);
 	CPPUNIT_ADD_TEST(suite, testDirname);
+	CPPUNIT_ADD_TEST(suite, testAppend);
+	CPPUNIT_ADD_TEST(suite, testNormalize);
 
 	return suite;
 }

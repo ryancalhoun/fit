@@ -1,4 +1,7 @@
 #include "Path.h"
+#include "string/StringList.h"
+#include "string/StringTokenizer.h"
+#include <vector>
 
 Path::Path()
 {}
@@ -11,19 +14,54 @@ Path::Path(const std::string& path)
 	: _path(path)
 {}
 
+Path::Path(const char* path)
+	: _path(path)
+{}
+
 Path& Path::operator=(const Path& rhs)
 {
 	_path = rhs;
 	return *this;
 }
 
-Path& Path::operator=(const std::string& rhs)
+Path Path::operator/(const std::string& rhs) const
 {
-	_path = rhs;
+	Path p = *this;
+	p /= rhs;
+	return p;
+}
+
+Path& Path::operator/=(const std::string& rhs)
+{
+	if(! _path.empty())
+		_path += "/";
+	_path += rhs;
 	return *this;
 }
 
-std::string Path::basename() const
+Path& Path::normalize()
+{
+	StringTokenizer tokenizer(_path);
+	tokenizer.onCharset("/");
+
+	std::string elem;
+
+	StringList parts;
+
+	while(tokenizer.next(elem))
+	{
+		if(elem == ".." && ! parts.empty())
+			parts.pop();
+		else if(elem != ".")
+			parts << elem;
+	}
+
+	_path = parts.join('/');
+
+	return *this;
+}
+
+Path Path::basename() const
 {
 	std::string::size_type index = _path.rfind('/');
 	if(index == std::string::npos)
@@ -31,7 +69,7 @@ std::string Path::basename() const
 	return _path.substr(index + 1);
 }
 
-std::string Path::dirname() const
+Path Path::dirname() const
 {
 	std::string::size_type index = _path.rfind('/');
 	if(index == std::string::npos)

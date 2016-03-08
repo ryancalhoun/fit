@@ -16,6 +16,8 @@ add_test(file_test file_test)
 target_link_libraries(file_test
 	file
 	cppunit
+
+	string
 )
 
 

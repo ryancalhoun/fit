@@ -14,8 +14,12 @@ public:
 	template <typename I>
 	StringList(const I& begin, const I& end);
 
+	bool empty() const;
+
 	StringList& append(const std::string& str);
 	StringList& operator<<(const std::string& str);
+
+	void pop();
 
 	template <template <typename,typename> class V, typename A>
 	StringList& concat(const V<std::string,A>& list);

@@ -19,6 +19,24 @@ void StringListTest::testAppend()
 	assert_equal("one,two,three", list.join(','));
 }
 
+void StringListTest::testEmpty()
+{
+	StringList list;
+	assert_true(list.empty());
+
+	list << "one";
+	assert_false(list.empty());
+}
+
+void StringListTest::testPop()
+{
+	StringList list;
+	list << "one" << "two" << "three";
+	list.pop();
+
+	assert_equal("one,two", list.join(','));
+}
+
 void StringListTest::testContainerConstructor()
 {
 	std::vector<std::string> v;

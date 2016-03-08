@@ -22,3 +22,21 @@ void PathTest::testDirname()
 	assert_equal("/", Path("/bin").dirname());
 }
 
+void PathTest::testAppend()
+{
+	assert_equal("foo/bar", Path() / "foo" / "bar");
+	assert_equal("./foo/bar", Path(".") / "foo" / "bar");
+
+	Path q("foo");
+	q /= "bar";
+
+	assert_equal("foo/bar", q);
+}
+
+void PathTest::testNormalize()
+{
+	assert_equal("bar/none", Path("bar/./none/./").normalize());
+	assert_equal("bar/none", Path("foo/../bar/./wow/../none/./").normalize());
+	assert_equal("../bar/none", Path(".././bar/./none/./").normalize());
+}
+

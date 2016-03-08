@@ -8,12 +8,17 @@ public:
 	Path();
 	Path(const Path& rhs);
 	Path(const std::string& path);
+	Path(const char* path);
 
 	Path& operator=(const Path& rhs);
-	Path& operator=(const std::string& rhs);
 
-	std::string basename() const;
-	std::string dirname() const;
+	Path operator/(const std::string& rhs) const;
+	Path& operator/=(const std::string& rhs);
+
+	Path& normalize();
+
+	Path basename() const;
+	Path dirname() const;
 
 	operator const std::string& () const;
 

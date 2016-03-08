@@ -9,6 +9,8 @@ public:
 	void tearDown();
 
 	void testAppend();
+	void testEmpty();
+	void testPop();
 	void testContainerConstructor();
 	void testContainerConcat();
 	void testIteratorConstructor();
@@ -22,6 +24,8 @@ inline CppUnit::Test* StringListTest::suite()
 	CPPUNIT_DEFINE_SUITE(suite, StringListTest);
 
 	CPPUNIT_ADD_TEST(suite, testAppend);
+	CPPUNIT_ADD_TEST(suite, testEmpty);
+	CPPUNIT_ADD_TEST(suite, testPop);
 	CPPUNIT_ADD_TEST(suite, testContainerConstructor);
 	CPPUNIT_ADD_TEST(suite, testContainerConcat);
 	CPPUNIT_ADD_TEST(suite, testIteratorConstructor);

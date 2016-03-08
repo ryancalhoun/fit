@@ -5,7 +5,7 @@ project(fit)
 enable_testing()
 
 include_directories(
-	${CMAKE_SOURCE_DIR}/src
+	${CMAKE_SOURCE_DIR}/src/lib
 	${CMAKE_SOURCE_DIR}/vendor/cppunit/include
 )
 link_directories(
