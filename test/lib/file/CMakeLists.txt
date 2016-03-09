@@ -13,7 +13,7 @@ include_directories(
 )
 
 add_executable(file_test ${SOURCES})
-add_test(file_test file_test)
+add_test(file_test file_test -V)
 
 target_link_libraries(file_test
 	file
