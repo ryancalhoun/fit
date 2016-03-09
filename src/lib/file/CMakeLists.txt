@@ -1,8 +1,10 @@
 set(HEADERS
+	CurrentDirectory.h
 	Path.h
 )
 
 set(SOURCES
+	CurrentDirectory.cpp
 	Path.cpp
 )
 

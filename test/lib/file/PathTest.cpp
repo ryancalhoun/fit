@@ -22,10 +22,26 @@ void PathTest::testDirname()
 	assert_equal("/", Path("/bin").dirname());
 }
 
+void PathTest::testIsAbsolute()
+{
+	assert_false(Path().isAbsolute());
+	assert_false(Path("file.txt").isAbsolute());
+	assert_true(Path("/usr/file.txt").isAbsolute());
+}
+
+void PathTest::testIsCurrent()
+{
+	assert_true(Path().isCurrent());
+	assert_true(Path(".").isCurrent());
+	assert_true(Path("./").isCurrent());
+	assert_false(Path("foo").isCurrent());
+}
+
 void PathTest::testAppend()
 {
 	assert_equal("foo/bar", Path() / "foo" / "bar");
 	assert_equal("./foo/bar", Path(".") / "foo" / "bar");
+	assert_equal("/foo/bar", Path("/") / "foo" / "bar");
 
 	Path q("foo");
 	q /= "bar";

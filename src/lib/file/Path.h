@@ -20,6 +20,9 @@ public:
 	Path basename() const;
 	Path dirname() const;
 
+	bool isAbsolute() const;
+	bool isCurrent() const;
+
 	operator const std::string& () const;
 
 protected:

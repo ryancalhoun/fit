@@ -33,7 +33,7 @@ Path Path::operator/(const std::string& rhs) const
 
 Path& Path::operator/=(const std::string& rhs)
 {
-	if(! _path.empty())
+	if(! _path.empty() && _path.compare(_path.size() - 1, 1, "/") != 0 && rhs.compare(0, 1, "/") != 0)
 		_path += "/";
 	_path += rhs;
 	return *this;
@@ -77,6 +77,16 @@ Path Path::dirname() const
 	if(index == 0)
 		return "/";
 	return _path.substr(0, index);
+}
+
+bool Path::isAbsolute() const
+{
+	return _path.compare(0, 1, "/") == 0;
+}
+
+bool Path::isCurrent() const
+{
+	return _path.empty() || _path == "." || _path == "./";
 }
 
 Path::operator const std::string& () const
