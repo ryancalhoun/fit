@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 
 project(fit)
 
+include(Emplace)
+
 enable_testing()
 
 include_directories(
