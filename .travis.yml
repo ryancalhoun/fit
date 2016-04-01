@@ -6,6 +6,11 @@ compiler:
   - clang
   - gcc
 
+branches:
+  only:
+    - master
+    - dev/unix
+
 before_install:
   - bundle install
 install:

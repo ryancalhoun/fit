@@ -4,6 +4,11 @@ configuration:
   - RelWithDebInfo
   - Debug
 
+branches:
+  only:
+    - master
+    - dev/win32
+
 install:
   - bundle install
   - rake cppunit
