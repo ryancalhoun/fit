@@ -1,11 +1,13 @@
 require 'emplace'
 
-cppunit = Emplace::Project.new 'cppunit'
+cppunit = Emplace::Project.new 'cppunit',
+  url: 'https://github.com/ryancalhoun/cppunit/releases/download/',
+  version: 'v1.14.0-9'
+
 project = Emplace::Project.new 'fit'
 
 task :cppunit do
-  url = 'https://github.com/ryancalhoun/cppunit/releases/download/v1.14.0-9/'
-  cppunit.fetch! url
+  cppunit.fetch!
   cppunit.extract!
 end
 
