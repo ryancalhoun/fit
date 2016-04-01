@@ -4,7 +4,7 @@ cppunit = Emplace::Project.new 'cppunit'
 project = Emplace::Project.new 'fit'
 
 task :cppunit do
-  url = 'https://github.com/ryancalhoun/cppunit/releases/download/v1.14.0-8/'
+  url = 'https://github.com/ryancalhoun/cppunit/releases/download/v1.14.0-9/'
   cppunit.fetch! url
   cppunit.extract!
 end
