@@ -7,9 +7,8 @@ compiler:
   - gcc
 
 branches:
-  only:
-    - master
-    - dev/unix
+  except:
+    - dev/win32
 
 before_install:
   - bundle install
