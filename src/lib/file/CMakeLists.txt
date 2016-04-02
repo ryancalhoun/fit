@@ -1,10 +1,13 @@
 set(HEADERS
 	CurrentDirectory.h
+	IFilesystemDriver.h
+	Filesystem.h
 	Path.h
 )
 
 set(SOURCES
 	CurrentDirectory.cpp
+	Filesystem.cpp
 	Path.cpp
 )
 
