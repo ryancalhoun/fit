@@ -14,4 +14,5 @@ include_directories(
 
 add_library(file STATIC ${HEADERS} ${SOURCES})
 install(TARGETS file DESTINATION lib)
+install_symbols(TARGETS file STATIC DESTINATION lib)
 install(FILES ${HEADERS} DESTINATION include/file)
