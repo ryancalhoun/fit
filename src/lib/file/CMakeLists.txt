@@ -1,10 +1,13 @@
 set(HEADERS
 	CurrentDirectory.h
+	IFilesystemDriver.h
+	Filesystem.h
 	Path.h
 )
 
 set(SOURCES
 	CurrentDirectory.cpp
+	Filesystem.cpp
 	Path.cpp
 )
 
@@ -14,4 +17,5 @@ include_directories(
 
 add_library(file STATIC ${HEADERS} ${SOURCES})
 install(TARGETS file DESTINATION lib)
+install_symbols(TARGETS file STATIC DESTINATION lib)
 install(FILES ${HEADERS} DESTINATION include/file)

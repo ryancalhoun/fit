@@ -3,6 +3,8 @@ project(file_test)
 set(SOURCES
 	CurrentDirectoryTest.cpp
 	CurrentDirectoryTest.h
+	FilesystemTest.cpp
+	FilesystemTest.h
 	PathTest.cpp
 	PathTest.h
 	file_test_driver.cpp
