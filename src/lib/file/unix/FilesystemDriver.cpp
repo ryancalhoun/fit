@@ -1,5 +1,6 @@
 #include "FilesystemDriver.h"
 #include <vector>
+#include <cerrno>
 #include <unistd.h>
 
 Path FilesystemDriver::pwd() const
