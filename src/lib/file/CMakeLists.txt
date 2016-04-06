@@ -2,6 +2,7 @@ set(HEADERS
 	CurrentDirectory.h
 	IFilesystemDriver.h
 	Filesystem.h
+	FilesystemDriver.h
 	Path.h
 )
 
@@ -10,6 +11,15 @@ set(SOURCES
 	Filesystem.cpp
 	Path.cpp
 )
+if(UNIX)
+	list(APPEND SOURCES
+		unix/FilesystemDriver.cpp
+	)
+else()
+	list(APPEND SOURCES
+		win32/FilesystemDriver.cpp
+	)
+endif()
 
 include_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}

@@ -27,6 +27,8 @@ void PathTest::testIsAbsolute()
 	assert_false(Path().isAbsolute());
 	assert_false(Path("file.txt").isAbsolute());
 	assert_true(Path("/usr/file.txt").isAbsolute());
+
+	assert_true(Path("C:/Program Files").isAbsolute());
 }
 
 void PathTest::testIsCurrent()

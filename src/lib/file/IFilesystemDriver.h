@@ -7,6 +7,6 @@ class IFilesystemDriver
 public:
 	virtual ~IFilesystemDriver() {}
 
-	virtual Path pwd() = 0;
+	virtual Path pwd() const = 0;
 };
 
