@@ -16,6 +16,9 @@ if(UNIX)
 		unix/FilesystemDriver.cpp
 	)
 else()
+	list(APPEND SOURCES
+		win32/FilesystemDriver.cpp
+	)
 endif()
 
 include_directories(

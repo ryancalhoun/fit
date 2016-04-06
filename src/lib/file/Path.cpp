@@ -63,7 +63,7 @@ Path& Path::normalize()
 
 Path Path::basename() const
 {
-	std::string::size_type index = _path.rfind('/');
+	std::string::size_type index = _path.find_last_of("\\/");
 	if(index == std::string::npos)
 		return _path;
 	return _path.substr(index + 1);
@@ -71,7 +71,7 @@ Path Path::basename() const
 
 Path Path::dirname() const
 {
-	std::string::size_type index = _path.rfind('/');
+	std::string::size_type index = _path.find_last_of("\\/");
 	if(index == std::string::npos)
 		return ".";
 	if(index == 0)
@@ -81,6 +81,8 @@ Path Path::dirname() const
 
 bool Path::isAbsolute() const
 {
+	if(_path.size() > 2 && _path[1] == ':')
+		return true;
 	return _path.compare(0, 1, "/") == 0;
 }
 
