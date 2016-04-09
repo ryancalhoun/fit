@@ -22,6 +22,20 @@ void PathTest::testDirname()
 	assert_equal("/", Path("/bin").dirname());
 }
 
+void PathTest::testDriveLetter()
+{
+	assert_equal(0, Path("file.txt").driveLetter());
+	assert_equal(0, Path("/usr/file.txt").driveLetter());
+	assert_equal('C', Path("C:/Program Files").driveLetter());
+}
+
+void PathTest::testFixSlashes()
+{
+	assert_equal("/foo/bar", Path("/foo/bar"));
+	assert_equal("C:/Program Files/Vim", Path("C:\\Program Files\\Vim"));
+	assert_equal("C:/Program Files/Vim/7.3", Path("C:/Program Files") / "Vim\\7.3");
+}
+
 void PathTest::testIsAbsolute()
 {
 	assert_false(Path().isAbsolute());
@@ -42,6 +56,10 @@ void PathTest::testIsCurrent()
 void PathTest::testAppend()
 {
 	assert_equal("foo/bar", Path() / "foo" / "bar");
+	assert_equal("foo/bar", Path() / "foo" / "/bar");
+	assert_equal("foo/bar", Path() / "foo/" / "bar");
+	assert_equal("foo/bar", Path() / "foo/" / "/bar");
+
 	assert_equal("./foo/bar", Path(".") / "foo" / "bar");
 	assert_equal("/foo/bar", Path("/") / "foo" / "bar");
 
