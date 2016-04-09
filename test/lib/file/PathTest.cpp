@@ -18,7 +18,13 @@ void PathTest::testBasename()
 void PathTest::testDirname()
 {
 	assert_equal(".", Path("file.txt").dirname());
+	assert_equal(".", Path("file.txt").dirname(3));
+	assert_equal("file.txt", Path("file.txt").dirname(0));
+
 	assert_equal("foo/bar", Path("foo/bar/file.txt").dirname());
+	assert_equal("foo", Path("foo/bar/file.txt").dirname(2));
+	assert_equal(".", Path("foo/bar/file.txt").dirname(3));
+
 	assert_equal("/", Path("/bin").dirname());
 }
 

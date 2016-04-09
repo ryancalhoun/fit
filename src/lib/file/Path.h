@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iosfwd>
 
 class Path
 {
@@ -10,6 +11,7 @@ public:
 	Path(const std::string& path);
 	Path(const char* path);
 
+	bool operator==(const Path& rhs) const;
 	Path& operator=(const Path& rhs);
 
 	Path operator/(const Path& rhs) const;
@@ -18,7 +20,7 @@ public:
 	Path& normalize();
 
 	Path basename() const;
-	Path dirname() const;
+	Path dirname(size_t up = 1) const;
 
 	char driveLetter() const;
 
@@ -34,4 +36,6 @@ protected:
 protected:
 	std::string _path;
 };
+
+std::ostream& operator<<(std::ostream& out, const Path& path);
 

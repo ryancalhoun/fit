@@ -25,6 +25,11 @@ Path::Path(const char* path)
 	fixSlashes();
 }
 
+bool Path::operator==(const Path& rhs) const
+{
+	return _path == rhs._path;
+}
+
 Path& Path::operator=(const Path& rhs)
 {
 	_path = rhs;
@@ -81,13 +86,17 @@ Path Path::basename() const
 	return _path.substr(index + 1);
 }
 
-Path Path::dirname() const
+Path Path::dirname(size_t up /* = 1 */) const
 {
-	std::string::size_type index = _path.rfind('/');
-	if(index == std::string::npos)
-		return ".";
-	if(index == 0)
-		return "/";
+	std::string::size_type index = _path.size() + 1;
+	while(up-- > 0)
+	{
+		index = _path.rfind('/', index - 1);
+		if(index == std::string::npos)
+			return ".";
+		if(index == 0)
+			return "/";
+	}
 	return _path.substr(0, index);
 }
 
@@ -123,5 +132,10 @@ const std::string& Path::str() const
 void Path::fixSlashes()
 {
 	std::replace(_path.begin(), _path.end(), '\\', '/');
+}
+
+std::ostream& operator<<(std::ostream& out, const Path& path)
+{
+	return out << path.str();
 }
 
