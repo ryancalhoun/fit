@@ -18,6 +18,7 @@ public:
 	};
 
 protected:
+	friend class IFilesystemDriver;
 	static void install(IFilesystemDriver& driver);
 
 protected:

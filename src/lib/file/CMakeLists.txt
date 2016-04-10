@@ -1,6 +1,7 @@
 set(HEADERS
 	CurrentDirectory.h
 	IFilesystemDriver.h
+	MockFilesystemDriver.h
 	Filesystem.h
 	FilesystemDriver.h
 	Path.h
