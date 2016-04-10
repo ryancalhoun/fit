@@ -2,6 +2,7 @@
 #include "string/StringList.h"
 #include "string/StringTokenizer.h"
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 Path::Path()
