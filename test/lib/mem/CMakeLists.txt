@@ -1,6 +1,8 @@
 project(mem_test)
 
 set(SOURCES
+	AutoBufferTest.cpp
+	AutoBufferTest.h
 	MemBufferTest.cpp
 	MemBufferTest.h
 	mem_test_driver.cpp

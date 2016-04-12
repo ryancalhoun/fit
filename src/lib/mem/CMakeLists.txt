@@ -1,10 +1,12 @@
 set(HEADERS
+	AutoBuffer.h
 	IBuffer.h
 	IBufferReader.h
 	MemBuffer.h
 )
 
 set(SOURCES
+	AutoBuffer.cpp
 	MemBuffer.cpp
 )
 

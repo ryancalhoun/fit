@@ -2,7 +2,7 @@ require 'emplace'
 
 cppunit = Emplace::Project.new 'cppunit',
   url: 'https://github.com/ryancalhoun/cppunit/releases/download/',
-  version: 'v1.14.0-10'
+  version: 'v1.14.0-11'
 
 project = Emplace::Project.new 'fit'
 
