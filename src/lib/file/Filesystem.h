@@ -20,6 +20,7 @@ public:
 protected:
 	friend class IFilesystemDriver;
 	static void install(IFilesystemDriver& driver);
+	static void uninstall();
 
 protected:
 	static IFilesystemDriver* _driver;
