@@ -3,6 +3,10 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 
+#ifdef __APPLE__
+  #define O_LARGEFILE 0
+#endif
+
 int FileFlags::openFlags() const
 {
 	int cflags = O_LARGEFILE | O_CLOEXEC;

@@ -2,7 +2,11 @@
 #include "FileFlags.h"
 
 #include <fcntl.h>
-#define BASE_FLAGS O_LARGEFILE|O_CLOEXEC
+#ifdef __APPLE__
+	#define BASE_FLAGS O_CLOEXEC
+#else
+	#define BASE_FLAGS O_LARGEFILE|O_CLOEXEC
+#endif
 
 void FileFlagsTest::testReadWrite()
 {
