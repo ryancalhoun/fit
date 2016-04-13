@@ -2,14 +2,14 @@
 #include "cppunit/TestResultCollector.h"
 
 #include "AutoBufferTest.h"
-#include "MemBufferTest.h"
+#include "RawBufferTest.h"
 
 int main(int argc, const char* argv[])
 {
 	CppUnit::TextUi::TestRunner runner;
 
 	runner.addTest(AutoBufferTest::suite());
-	runner.addTest(MemBufferTest::suite());
+	runner.addTest(RawBufferTest::suite());
 
 	runner.run(argc, argv);
 

@@ -2,12 +2,12 @@ set(HEADERS
 	AutoBuffer.h
 	IBuffer.h
 	IBufferReader.h
-	MemBuffer.h
+	RawBuffer.h
 )
 
 set(SOURCES
 	AutoBuffer.cpp
-	MemBuffer.cpp
+	RawBuffer.cpp
 )
 
 include_directories(

@@ -3,8 +3,8 @@ project(mem_test)
 set(SOURCES
 	AutoBufferTest.cpp
 	AutoBufferTest.h
-	MemBufferTest.cpp
-	MemBufferTest.h
+	RawBufferTest.cpp
+	RawBufferTest.h
 	mem_test_driver.cpp
 )
 
