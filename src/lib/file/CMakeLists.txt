@@ -1,10 +1,13 @@
 set(HEADERS
 	CurrentDirectory.h
 	IFilesystemDriver.h
-	MockFilesystemDriver.h
+	File.h
+	FileFlags.h
 	Filesystem.h
 	FilesystemDriver.h
 	Path.h
+
+	MockFilesystemDriver.h
 )
 
 set(SOURCES
@@ -14,6 +17,7 @@ set(SOURCES
 )
 if(UNIX)
 	list(APPEND SOURCES
+		unix/FileFlags.cpp
 		unix/FilesystemDriver.cpp
 	)
 else()
