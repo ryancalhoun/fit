@@ -1,6 +1,7 @@
 set(HEADERS
 	CurrentDirectory.h
 	IFilesystemDriver.h
+	MockFilesystemDriver.h
 	Filesystem.h
 	FilesystemDriver.h
 	Path.h
@@ -16,6 +17,9 @@ if(UNIX)
 		unix/FilesystemDriver.cpp
 	)
 else()
+	list(APPEND SOURCES
+		win32/FilesystemDriver.cpp
+	)
 endif()
 
 include_directories(

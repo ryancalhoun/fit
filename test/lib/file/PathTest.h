@@ -10,6 +10,8 @@ public:
 
 	void testBasename();
 	void testDirname();
+	void testDriveLetter();
+	void testFixSlashes();
 	void testIsAbsolute();
 	void testIsCurrent();
 	void testAppend();
@@ -24,6 +26,8 @@ inline CppUnit::Test* PathTest::suite()
 
 	CPPUNIT_ADD_TEST(suite, testBasename);
 	CPPUNIT_ADD_TEST(suite, testDirname);
+	CPPUNIT_ADD_TEST(suite, testDriveLetter);
+	CPPUNIT_ADD_TEST(suite, testFixSlashes);
 	CPPUNIT_ADD_TEST(suite, testIsAbsolute);
 	CPPUNIT_ADD_TEST(suite, testIsCurrent);
 	CPPUNIT_ADD_TEST(suite, testAppend);
