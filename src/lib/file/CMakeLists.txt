@@ -22,6 +22,7 @@ if(UNIX)
 	)
 else()
 	list(APPEND SOURCES
+		win32/FileFlags.cpp
 		win32/FilesystemDriver.cpp
 	)
 endif()

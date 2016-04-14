@@ -8,6 +8,7 @@ public:
 	FileFlags(int flags);
 
 	int openFlags() const;
+	int createFlags() const;
 
 protected:
 	int _flags;
