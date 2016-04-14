@@ -5,10 +5,8 @@
 class FileFlagsTest : public CppUnit::TestFixture
 {
 public:
-	void testReadWrite();
-	void testAppend();
-	void testCreate();
-	void testTruncate();
+	void testOpenFlags();
+	void testCreateFlags();
 
 	static CppUnit::Test* suite();
 };
@@ -17,10 +15,8 @@ inline CppUnit::Test* FileFlagsTest::suite()
 {
 	CPPUNIT_DEFINE_SUITE(suite, FileFlagsTest);
 
-	CPPUNIT_ADD_TEST(suite, testReadWrite);
-	CPPUNIT_ADD_TEST(suite, testAppend);
-	CPPUNIT_ADD_TEST(suite, testCreate);
-	CPPUNIT_ADD_TEST(suite, testTruncate);
+	CPPUNIT_ADD_TEST(suite, testOpenFlags);
+	CPPUNIT_ADD_TEST(suite, testCreateFlags);
 
 	return suite;
 }
