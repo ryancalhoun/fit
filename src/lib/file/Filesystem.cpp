@@ -16,7 +16,22 @@ void Filesystem::install(IFilesystemDriver& driver)
 	_driver = &driver;
 }
 
+void Filesystem::uninstall()
+{
+	_driver = NULL;
+}
+
 Filesystem::Exception::Exception(const std::string& message)
 	: std::runtime_error(message)
 {}
+
+void IFilesystemDriver::install()
+{
+	Filesystem::install(*this);
+}
+
+void IFilesystemDriver::uninstall()
+{
+	Filesystem::uninstall();
+}
 
