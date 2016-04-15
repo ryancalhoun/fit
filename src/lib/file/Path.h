@@ -28,6 +28,7 @@ public:
 	bool isCurrent() const;
 
 	operator const std::string& () const;
+	operator const char* () const;
 	const std::string& str() const;
 
 protected:

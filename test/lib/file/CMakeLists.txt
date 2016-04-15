@@ -5,6 +5,8 @@ set(SOURCES
 	CurrentDirectoryTest.h
 	FileFlagsTest.cpp
 	FileFlagsTest.h
+	FileHandleTest.cpp
+	FileHandleTest.h
 	FilesystemDriverTest.cpp
 	FilesystemDriverTest.h
 	FilesystemTest.cpp
@@ -25,6 +27,7 @@ target_link_libraries(file_test
 	file
 	cppunit
 
+	mem
 	string
 )
 

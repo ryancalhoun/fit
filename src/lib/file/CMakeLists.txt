@@ -3,6 +3,7 @@ set(HEADERS
 	IFilesystemDriver.h
 	File.h
 	FileFlags.h
+	FileHandle.h
 	Filesystem.h
 	FilesystemDriver.h
 	Path.h
@@ -18,6 +19,7 @@ set(SOURCES
 if(UNIX)
 	list(APPEND SOURCES
 		unix/FileFlags.cpp
+		unix/FileHandle.cpp
 		unix/FilesystemDriver.cpp
 	)
 else()

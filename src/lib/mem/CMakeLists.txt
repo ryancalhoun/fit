@@ -1,5 +1,6 @@
 set(HEADERS
 	AutoBuffer.h
+	CString.h
 	IBuffer.h
 	IBufferReader.h
 	RawBuffer.h
@@ -7,6 +8,7 @@ set(HEADERS
 
 set(SOURCES
 	AutoBuffer.cpp
+	CString.cpp
 	RawBuffer.cpp
 )
 

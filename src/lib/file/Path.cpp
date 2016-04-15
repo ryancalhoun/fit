@@ -9,7 +9,7 @@ Path::Path()
 {}
 
 Path::Path(const Path& rhs)
-	: _path(rhs)
+	: _path(rhs.str())
 {
 	fixSlashes();
 }
@@ -33,7 +33,7 @@ bool Path::operator==(const Path& rhs) const
 
 Path& Path::operator=(const Path& rhs)
 {
-	_path = rhs;
+	_path = rhs.str();
 	return *this;
 }
 
@@ -52,7 +52,7 @@ Path& Path::operator/=(const Path& rhs)
  	if(rhs.str().compare(0, 1, "/") == 0)
 		_path += rhs.str().substr(1);
 	else
-		_path += rhs;
+		_path += rhs.str();
 
 	return *this;
 }
@@ -123,6 +123,11 @@ bool Path::isCurrent() const
 Path::operator const std::string& () const
 {
 	return _path;
+}
+
+Path::operator const char* () const
+{
+	return _path.c_str();
 }
 
 const std::string& Path::str() const
